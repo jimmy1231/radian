@@ -3,11 +3,45 @@ package radian.util.collection;
 /**
  * List Interface 
  * 
- * @author dfjim
+ * The List interface provides method definitions for List implementations. List 
+ * is an ordered Collection (or a Sequence) in which its interface has precise 
+ * control over where the element is inserted, and each element can be accessed
+ * through an integer index. 
+ * 
+ * List allow duplicate elements (unlike Set), however, implementations can res-
+ * trict duplicates if they wished by throwing Runtime Exceptions upon duplicate
+ * insertion. 
+ * 
+ * List implementations should provide methods for adding, removing, replacing, 
+ * searching, and sorting operations, with fundamental data structures and 
+ * algorithms of the implementation's choosing. 
+ * 
+ * @author Jimmy Li
  *
  * @param <E>
  */
 public interface List<E> extends Collection<E> {
+	
+	
+	/**
+	 * Inserts 'element' at a specified index location in the List, then shifts
+	 * all indices of following elements down by 1. 
+	 * 
+	 * Depending on the implementation, shifting could be a synonym of other op-
+	 * erations that are needed to maintain order in the list: i.e. restructuri-
+	 * ng heap in a HeapList.
+	 * 
+	 * @param index
+	 * @param element
+	 * @return <code>true | false</code> - Depending on whether op was completed
+	 * @throws UnsupportedOperationException - If add operation not supported
+	 * @throws ClassCastException - If class specified by element prevents add
+	 * @throws NullPointerException - If specified element is <code>null</code>
+	 * @throws IllegalArgumentException - If some property in element prohibits add
+	 * @throws IndexOutOfBoundsException - If specified index is out of range
+	 */
+	public boolean add(int index, E element)
+		throws UnsupportedOperationException, ClassCastException, NullPointerException, IllegalArgumentException, IndexOutOfBoundsException;
 	
 	/**
 	 * Returns an element at the specified position in the list. The element is 
@@ -20,7 +54,7 @@ public interface List<E> extends Collection<E> {
 	 * @return
 	 * @throws IndexOutOfBoundsException
 	 */
-	E get(int index)
+	public E get(int index)
 		throws IndexOutOfBoundsException; 
 	
 	/**
@@ -32,7 +66,7 @@ public interface List<E> extends Collection<E> {
 	 * @throws ClassCastException - If the type of the object is incompatible
 	 * @throws NullPointerException - If the specified element is null
 	 */
-	int indexOf(Object o)
+	public int indexOf(Object o)
 		throws ClassCastException, NullPointerException;
 	
 	/**
@@ -50,7 +84,7 @@ public interface List<E> extends Collection<E> {
 	 * @throws IllegalArgumentException - If property in element prevents adding
 	 * @throws IndexOutOfBoundsException - If index provided is out of range
 	 */
-	E replace(int index, E element)
+	public E replace(int index, E element)
 		throws UnsupportedOperationException, ClassCastException, NullPointerException, IllegalArgumentException, IndexOutOfBoundsException;
 	
 	/**
@@ -76,7 +110,7 @@ public interface List<E> extends Collection<E> {
 	 * @throws UnsupportedOperationException - If List does not support operation
 	 * @throws IllegalArgumentException - If Comparator found to violate contract
 	 */
-	void sort(Comparator<? super E> c)
+	public void sort(Comparator<? super E> c)
 		throws ClassCastException, UnsupportedOperationException, IllegalArgumentException;
 	
 	/**
@@ -96,7 +130,7 @@ public interface List<E> extends Collection<E> {
 	 * @return
 	 * @throws IndexOutOfBoundsException - If any indices are out of bounds.
 	 */
-	List<E> subList(int fromIndex, int toIndex)
+	public List<E> subList(int fromIndex, int toIndex)
 		throws IndexOutOfBoundsException;
 	
 }
