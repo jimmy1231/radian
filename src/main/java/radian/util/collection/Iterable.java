@@ -1,5 +1,7 @@
 package radian.util.collection;
 
+import radian.util.funcinterface.Consumer;
+
 /**
  * Iterable Interface 
  * 
