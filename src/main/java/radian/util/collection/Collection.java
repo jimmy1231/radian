@@ -29,7 +29,7 @@ package radian.util.collection;
  *
  * @param <E>
  */
-public interface Collection<E> {
+public interface Collection<E> extends Iterable<E> {
 	
 	/**
 	 * After this operation, the Collection should now contain this element. Re-
