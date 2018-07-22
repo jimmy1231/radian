@@ -133,6 +133,6 @@ public interface List<E> extends Collection<E> {
 	 * @throws IndexOutOfBoundsException - If any indices are out of bounds.
 	 */
 	public List<E> subList(int fromIndex, int toIndex)
-		throws IndexOutOfBoundsException;
+		throws UnsupportedOperationException, IndexOutOfBoundsException;
 	
 }
