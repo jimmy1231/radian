@@ -1,10 +1,11 @@
 package radian.util.collection.abstr;
 
+import radian.util.collection.Iterator;
 import radian.util.collection.List;
+import radian.util.exception.NoSuchElementException;
 
 public abstract class AbstractList<E> implements List<E> 
 {
-	
 	
 	public boolean add(E e) 
 		throws ClassCastException, NullPointerException, IllegalArgumentException
@@ -58,6 +59,28 @@ public abstract class AbstractList<E> implements List<E>
 	{
 		
 		return null;
+	}
+	
+	
+	public Iterator<E> iterator() 
+	{
+		return new Iterator<E>() 
+		{
+			private int curr = 0;
+			
+			public boolean hasNext() 
+			{
+				return (curr + 1 == AbstractList.this.size());
+			}
+
+			public E next() throws NoSuchElementException 
+			{	
+				if (curr + 1 == AbstractList.this.size()) 
+					throw new NoSuchElementException(); 
+				
+				return (AbstractList.this.get(curr));
+			}
+		};
 	}
 	
 	
