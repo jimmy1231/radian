@@ -57,7 +57,7 @@ public interface List<E> extends Collection<E> {
 	 * @throws IndexOutOfBoundsException
 	 */
 	public E get(int index)
-		throws IndexOutOfBoundsException; 
+			throws IndexOutOfBoundsException; 
 	
 	/**
 	 * Returns the index of the first occurrence of the specified element in the
@@ -69,7 +69,7 @@ public interface List<E> extends Collection<E> {
 	 * @throws NullPointerException - If the specified element is null
 	 */
 	public int indexOf(Object o)
-		throws ClassCastException, NullPointerException;
+			throws ClassCastException, NullPointerException;
 	
 	/**
 	 * Replaces the element at the specified location (by 'index') with the giv-
@@ -87,7 +87,7 @@ public interface List<E> extends Collection<E> {
 	 * @throws IndexOutOfBoundsException - If index provided is out of range
 	 */
 	public E replace(int index, E element)
-		throws UnsupportedOperationException, ClassCastException, NullPointerException, IllegalArgumentException, IndexOutOfBoundsException;
+			throws UnsupportedOperationException, ClassCastException, NullPointerException, IllegalArgumentException, IndexOutOfBoundsException;
 	
 	/**
 	 * Sorts the list according to the order induced by the specified Comparator
@@ -113,7 +113,7 @@ public interface List<E> extends Collection<E> {
 	 * @throws IllegalArgumentException - If Comparator found to violate contract
 	 */
 	public void sort(Comparator<? super E> c)
-		throws ClassCastException, UnsupportedOperationException, IllegalArgumentException;
+			throws ClassCastException, UnsupportedOperationException, IllegalArgumentException;
 	
 	/**
 	 * Returns a view of the portion of this list between the specified <code>
@@ -133,6 +133,6 @@ public interface List<E> extends Collection<E> {
 	 * @throws IndexOutOfBoundsException - If any indices are out of bounds.
 	 */
 	public List<E> subList(int fromIndex, int toIndex)
-		throws UnsupportedOperationException, IndexOutOfBoundsException;
+			throws UnsupportedOperationException, IndexOutOfBoundsException;
 	
 }

@@ -51,7 +51,7 @@ public interface Collection<E> extends Iterable<E> {
 	 * @throws IllegalArgumentException
 	 */
 	public boolean add(E e) 
-		throws UnsupportedOperationException, ClassCastException, NullPointerException, IllegalArgumentException;
+			throws UnsupportedOperationException, ClassCastException, NullPointerException, IllegalArgumentException;
 	
 	/**
 	 * Removes all entries in the Collection after this operation. The Collection 
@@ -60,7 +60,7 @@ public interface Collection<E> extends Iterable<E> {
 	 * @throws UnsupportedOperationException
 	 */
 	public void clear()
-		throws UnsupportedOperationException;
+			throws UnsupportedOperationException;
 	
 	/**
 	 * Use the equals() method to compare whether the element 'o' is equal to an
@@ -76,7 +76,7 @@ public interface Collection<E> extends Iterable<E> {
 	 * @throws UnsupportedOperationException
 	 */
 	public boolean remove(Object o)
-		throws ClassCastException, NullPointerException, UnsupportedOperationException;
+			throws ClassCastException, NullPointerException, UnsupportedOperationException;
 	
 	/**
 	 * Returns true if this collection contains the specified element. If the 
@@ -89,7 +89,7 @@ public interface Collection<E> extends Iterable<E> {
 	 * @throws NullPointerException - if 'o' equals null
 	 */
 	public boolean contains(Object o)
-		throws ClassCastException, NullPointerException;
+			throws ClassCastException, NullPointerException;
 	
 	/**
 	 * Returns true if the Collection contains no elements

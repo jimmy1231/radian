@@ -3,19 +3,21 @@ package radian.util.collection.abstr;
 import radian.util.collection.Iterator;
 import radian.util.collection.List;
 import radian.util.exception.NoSuchElementException;
+import radian.util.funcinterface.Consumer;
 
 public abstract class AbstractList<E> implements List<E> 
 {
 	
 	public boolean add(E e) 
-		throws ClassCastException, NullPointerException, IllegalArgumentException
+			throws ClassCastException, NullPointerException, IllegalArgumentException
 	{		
 		return AbstractList.this.add(AbstractList.this.size(), e);
 	}
 	
 	
 	public E replace(int index, E element) 
-		throws ClassCastException, NullPointerException, IllegalArgumentException, IndexOutOfBoundsException
+			throws ClassCastException, NullPointerException, IllegalArgumentException, 
+				   IndexOutOfBoundsException
 	{
 		
 		return null;
@@ -23,7 +25,7 @@ public abstract class AbstractList<E> implements List<E>
 	
 	
 	public boolean contains(Object o) 
-		throws ClassCastException, NullPointerException
+			throws ClassCastException, NullPointerException
 	{
 		if (o == null) 
 			throw new NullPointerException();
@@ -75,13 +77,23 @@ public abstract class AbstractList<E> implements List<E>
 
 			public E next() throws NoSuchElementException 
 			{	
-				if (curr + 1 == AbstractList.this.size()) 
+				if (!this.hasNext()) 
 					throw new NoSuchElementException(); 
 				
-				return (AbstractList.this.get(curr));
+				curr += 1; 
+				
+				return AbstractList.this.get(curr);
 			}
 		};
 	}
 	
+	
+	public void forEach(Consumer<? super E> action) {
+		int i; 
+		
+		for (i = 0; i < AbstractList.this.size(); i++ ) {
+			action.accept(AbstractList.this.get(i));
+		}
+	}
 	
 }

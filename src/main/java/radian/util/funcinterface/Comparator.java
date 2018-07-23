@@ -50,6 +50,6 @@ public interface Comparator<T> {
 	 * 		   eing compared by this comparator.
 	 */
 	public int compare(T o1, T o2)
-		throws NullPointerException, ClassCastException;
+			throws NullPointerException, ClassCastException;
 
 }

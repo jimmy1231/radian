@@ -36,7 +36,6 @@ public interface Iterator<E> {
 	 * @return
 	 * @throws NoSuchElementException 
 	 */
-	public E next()
-		throws NoSuchElementException; 
+	public E next() throws NoSuchElementException; 
 
 }

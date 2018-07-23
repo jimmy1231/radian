@@ -5,8 +5,8 @@ import radian.util.funcinterface.Consumer;
 /**
  * Iterable Interface 
  * 
- * By implementing this method, types T can be iterated using the Java syntacti-
- * cal sugar: for-each loop - e.g. for (T t : array) { ... }, also known as the
+ * By implementing this method, types T can be iterated using the Java syntactic
+ * sugar: for-each loop - e.g. for (T t : array) { ... }, also known as the
  * enhanced for loop.
  * 
  * @author Jimmy Li
@@ -22,7 +22,7 @@ public interface Iterable<T> {
 	 * @param action
 	 */
 	public void forEach(Consumer<? super T> action)
-		throws NullPointerException;
+			throws NullPointerException;
 	
 	/**
 	 * Returns an iterator over elements of type T
