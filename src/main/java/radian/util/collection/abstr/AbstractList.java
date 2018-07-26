@@ -18,9 +18,18 @@ public abstract class AbstractList<E> implements List<E>
 	public E replace(int index, E element) 
 			throws ClassCastException, NullPointerException, IllegalArgumentException, 
 				   IndexOutOfBoundsException
-	{
+	{	
+		E original = null; 
 		
-		return null;
+		if (element == null) 
+			throw new NullPointerException(); 
+		
+		original = AbstractList.this.get(index);
+
+		if (!AbstractList.this.add(index, element)) 
+			throw new IllegalArgumentException();
+		
+		return original;
 	}
 	
 	
@@ -59,8 +68,14 @@ public abstract class AbstractList<E> implements List<E>
 	
 	public Object[] toArray() 
 	{
+		int i; 
+		Object[] arr = new Object[AbstractList.this.size()];
 		
-		return null;
+		for (i = 0; i < AbstractList.this.size(); i++ ) {
+			arr[i] = AbstractList.this.get(i);
+		}
+		
+		return arr;
 	}
 	
 	
